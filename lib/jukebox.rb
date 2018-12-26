@@ -31,11 +31,11 @@ def play(songs)
     songs.each_with_index do |item, index|
       if response == item || response == (index + 1)
         puts "Playing #{item}"
-      end
-    else
-      puts "Invalid input, please try again"
-    end
-  end
+      end#if
+    end#songs
+  else
+    puts "Invalid input, please try again"
+  end#if
 end
 
 def exit_jukebox
@@ -43,9 +43,9 @@ def exit_jukebox
 end
 
 def run(songs)
-  r = 0
+  r = ""
   help
-  while r < 1
+  while r != "exit"
     puts "Please enter a command:"
     r = gets.chomp
     if r == "help"
@@ -56,7 +56,6 @@ def run(songs)
       play(songs)
     elsif r == "exit"
       exit_jukebox
-      r = 1
     end
   end
 end

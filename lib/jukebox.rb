@@ -19,9 +19,42 @@ def help
 end
 
 def list(songs)
-  i = 1
-  songs.each do |item|
-    puts "#{i}. #{item}"
-    i += 1
+  songs.each_with_index do |item|
+    puts "#{index + 1}. #{item}"
+  end
+end
+
+def play(songs)
+  puts "Please enter a song name or nuumber:"
+  response = gets.chomp
+  songs.each_with_index do |item|
+    if response == item || response == (index + 1)
+      puts "Playing #{item}"
+    else
+      puts "Invalid input, please try again"
+    end
+  end
+end
+
+def exit_jukebox
+  puts "Goodbye"
+end
+
+def run
+  r = ""
+  help
+  while r != "exit"
+    puts "Please enter a command:"
+    r = gets.chomp
+    if r == help
+      help
+    elsif r == list
+      list(songs)
+    elsif r == play
+      play(songs)
+    elsif r == exit
+      exit_jukebox
+      exit
+    end
   end
 end

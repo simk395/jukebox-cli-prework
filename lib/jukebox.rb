@@ -27,9 +27,11 @@ end
 def play(songs)
   puts "Please enter a song name or nuumber:"
   response = gets.chomp
-  songs.each_with_index do |item, index|
-    if response == item || response == (index + 1)
-      puts "Playing #{item}"
+  if songs.include?(response)
+    songs.each_with_index do |item, index|
+      if response == item || response == (index + 1)
+        puts "Playing #{item}"
+      end
     else
       puts "Invalid input, please try again"
     end

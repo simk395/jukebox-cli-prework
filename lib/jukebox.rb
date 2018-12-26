@@ -30,7 +30,7 @@ def play(songs)
   if songs.include?(response) || response == (1..songs.size)
     if response.class == String
       puts "Playing #{response}"
-    elsif response.class == Integer
+    elsif response.class == Fixnum
       puts "Playing #{songs[response-1]}"
     end
   else

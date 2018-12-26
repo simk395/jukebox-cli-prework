@@ -27,10 +27,10 @@ end
 def play(songs)
   puts "Please enter a song name or number:"
   response = gets.chomp
-  if songs.include?(response) || response == 1..songs.size
-    if response == String
+  if songs.include?(response) || response == (1..songs.size)
+    if response.class == String
       puts "Playing #{response}"
-    elsif response == Integer
+    elsif response.class == Integer
       puts "Playing #{songs[response-1]}"
     end
   else

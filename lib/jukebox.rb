@@ -30,7 +30,7 @@ def play(songs)
   if songs.include?(response)
     puts "Playing #{response}"
   elsif response == "1".."songs.size"
-    puts "Playing #{songs[response.to_i -1]}"
+    puts "Playing #{songs[(response.to_i - 1)]}"
   else
     puts "Invalid input, please try again"
   end#if

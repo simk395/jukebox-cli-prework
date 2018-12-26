@@ -19,7 +19,7 @@ def help
 end
 
 def list(songs)
-  songs.each_with_index do |item|
+  songs.each_with_index do |item, index|
     puts "#{index + 1}. #{item}"
   end
 end
@@ -27,7 +27,7 @@ end
 def play(songs)
   puts "Please enter a song name or nuumber:"
   response = gets.chomp
-  songs.each_with_index do |item|
+  songs.each_with_index do |item, index|
     if response == item || response == (index + 1)
       puts "Playing #{item}"
     else

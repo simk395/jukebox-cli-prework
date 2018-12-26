@@ -43,9 +43,9 @@ def exit_jukebox
 end
 
 def run(songs)
-  r = ""
+  r = 0
   help
-  while r != "exit"
+  while r < 1
     puts "Please enter a command:"
     r = gets.chomp
     if r == help
@@ -56,6 +56,7 @@ def run(songs)
       play(songs)
     elsif r == "exit"
       exit_jukebox
+      r = 1
     end
   end
 end

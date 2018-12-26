@@ -50,9 +50,9 @@ def run(songs)
     r = gets.chomp
     if r == help
       help
-    elsif r == list
+    elsif r == "list"
       list(songs)
-    elsif r == play
+    elsif r == "play"
       play(songs)
     elsif r == "exit"
       exit_jukebox

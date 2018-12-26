@@ -48,7 +48,7 @@ def run(songs)
   while r < 1
     puts "Please enter a command:"
     r = gets.chomp
-    if r == help
+    if r == "help"
       help
     elsif r == "list"
       list(songs)
